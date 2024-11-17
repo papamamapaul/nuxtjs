@@ -1,5 +1,13 @@
 export default defineNuxtConfig({
   // Global page headers: https://go.nuxtjs.dev/config-head
+  runtimeConfig: {
+    // The private keys which are only available within server-side
+    apiUrl: 'localhost:3000',
+    // Keys within public, will be also exposed to the client-side
+    public: {
+      apiUrl: process.env.API_URL,
+    }
+  },
   head: {
     title: "nuxtjs",
     htmlAttrs: {
